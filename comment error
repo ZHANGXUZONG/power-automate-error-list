@@ -1,0 +1,12 @@
+@and(
+  /* 完成状況 为空 (null 或 "") */
+  empty(trim(item()?['完成状況'])),https://github.com/ZHANGXUZONG/power-automate-error-list/tree/main
+
+  /* 締め切り < 今天(JST) */
+  less(
+    formatDateTime(item()?['締め切り'],'yyyy-MM-dd'),
+    formatDateTime(addHours(utcNow(),9),'yyyy-MM-dd')
+  )
+)    
+
+automate 不能写注释，@也要去掉
